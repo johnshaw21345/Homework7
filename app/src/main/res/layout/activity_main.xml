@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <RelativeLayout
+        android:id="@+id/top_bar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/black">
+
+        <EditText
+            android:id="@+id/edit_filename"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="20dp"
+            android:layout_width="match_parent"
+            android:layout_height="30dp"
+            android:hint="File Name..."
+            android:textAlignment="center"
+            android:textSize="20dp"
+            android:background="@color/teal_200" />
+
+    </RelativeLayout>
+
+    <SurfaceView
+        android:id="@+id/camera_view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/top_bar"
+        android:layout_above="@id/bottom_bar"/>
+
+    <RelativeLayout
+        android:id="@+id/bottom_bar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:background="@color/black">
+
+        <TextView
+            android:id="@+id/file_info"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="20dp"
+            android:layout_width="match_parent"
+            android:layout_height="100dp"
+            android:text="File Info..."
+            android:textAlignment="center"
+            android:textSize="12dp"
+            android:background="@color/teal_200" />
+
+        <Button
+            android:id="@+id/btn_shot"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_centerHorizontal="true"
+            android:layout_below="@id/file_info"
+            android:background="@drawable/button_round"
+            android:layout_margin="10dp"/>
+
+        <Button
+            android:id="@+id/btn_flip"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toStartOf="@id/btn_shot"
+            android:layout_alignBaseline="@id/btn_shot"
+            android:layout_marginEnd="20dp"
+            android:text="FLIP"/>
+
+        <ImageView
+            android:id="@+id/thumbnail_view"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_toEndOf="@id/btn_shot"
+            android:layout_alignTop="@id/btn_shot"
+            android:layout_marginStart="20dp"
+            android:scaleType="centerCrop"
+            android:background="@color/white"
+            android:rotation="90"/>
+
+    </RelativeLayout>
+
+</RelativeLayout>
